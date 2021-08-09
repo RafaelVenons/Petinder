@@ -6,7 +6,7 @@ import Search from './componentes/Search.jsx';
 import PetDao from './IDB/PetDao.js';
 import Home from './componentes/Home.jsx';
 import Favoritos from './componentes/Favoritos.jsx';
-import User from './componentes/User.jsx';
+import User from './componentes/User/User.jsx';
 
 function App() {
   let DAO = new PetDao();
