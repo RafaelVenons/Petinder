@@ -2,12 +2,12 @@ import React from 'react';
 import ProfileDefault from "../assets/ProfileDefault.png"
 import { ProfileDiv, ProfileImg, ProfileMenu, ProfileName, ProfileConfig } from '../styles/Header';
 
-function Profile(){
+function Profile({nome}){
     return (
         <ProfileDiv>
             <ProfileImg src={ProfileDefault} />
             <ProfileMenu>
-                <ProfileName>Venons</ProfileName>
+                <ProfileName>{nome}</ProfileName>
                 <ProfileConfig>Configurações</ProfileConfig>
             </ProfileMenu>
         </ProfileDiv>

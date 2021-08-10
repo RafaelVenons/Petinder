@@ -8,20 +8,24 @@ import {
   Pq,
 } from "./style.js";
 
-function User() {
+function User({nome, setNome, desc, setDesc}) {
+  const [novoNome, setNovoNome] = useState('');
+  const [novaDesc, setNovaDesc] = useState('');
 
-	const [nome, setNome] = useState('Venão');
-	const [desc, setDesc] = useState('I S2 Pets');
-	const [novoNome, setNovoNome] = useState('');
-	const [novaDesc, setNovaDesc] = useState('');
+  function handledForm(event) {
+    event.preventDefault();
+    if (novoNome !== ''){
+      localStorage.setItem('Nome', novoNome);
+      setNome(novoNome);
+      setNovoNome('');
+    }
+    if (novaDesc !== ''){
+      localStorage.setItem('Desc', novaDesc);
+      setDesc(novaDesc);
+      setNovaDesc('');
+    }
+  }
 
-	function handledForm(event){
-		event.preventDefault();
-		if(novoNome === '')
-			setNome(novoNome);
-		if(novaDesc === '')
-		setDesc(novaDesc);
-	}
   return (
     <Container maxWidth="sm">
       <UsuarioApresentacao>
@@ -33,9 +37,10 @@ function User() {
       </UsuarioApresentacao>
       <form onSubmit={handledForm}>
         <TextField
-					onChange={e => {
-						setNovoNome(e.target.value);
-					}}
+        value={novoNome}
+          onChange={(e) => {
+            setNovoNome(e.target.value);
+          }}
           id="novo_nome"
           label="Nome de Usuario"
           variant="outlined"
@@ -43,9 +48,10 @@ function User() {
           fullWidth
         />
         <TextField
-					onChange={e => {
-						setNovaDesc(e.target.value);
-					}}
+          value={novaDesc}
+          onChange={(e) => {
+            setNovaDesc(e.target.value);
+          }}
           id="nova_desc"
           label="Porque estou no Petinder?"
           multiline
