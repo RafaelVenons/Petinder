@@ -22,3 +22,10 @@ export const DialogPet = styled.img`
     max-height: 100%;
     border-radius: 15px;
 `
+export const PetItem = styled.p`
+    margin: 0px;
+    padding: 0.2rem;
+`
+export const PetProp = styled.span`
+    font-weight: bold;
+`
