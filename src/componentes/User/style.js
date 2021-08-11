@@ -27,5 +27,6 @@ export const Name = styled.h3`
     margin: 0px;
 `
 export const Pq = styled.p`
-    font-size: 1.5rem;
+    max-width: 270px;
+    font-size: 1.2rem;
 `

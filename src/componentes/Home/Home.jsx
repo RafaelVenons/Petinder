@@ -5,8 +5,8 @@ import { MenuLike, Opcao } from './style.js';
 function Home(){
     return (
         <MenuLike>
-            <Link to="/search"><Opcao></Opcao></Link>
-            <Link to="/favoritos"><Opcao></Opcao></Link>
+            <Link to="/search"><Opcao><h2>Novos Pets</h2></Opcao></Link>
+            <Link to="/favoritos"><Opcao><h2>Favoritos</h2></Opcao></Link>
         </MenuLike>
     )
 }

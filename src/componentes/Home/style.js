@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { opcaoBackgroud } from "../../styles/Color";
 
 export const Opcao = styled.section`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     height: 50vh;
     width: 30vw;
     border-radius: 30px;

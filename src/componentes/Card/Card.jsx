@@ -15,7 +15,6 @@ function Card(props) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
-    console.log(open);
     setOpen(true);
   };
 
@@ -52,12 +51,12 @@ function Card(props) {
             <DialogContentText>
               {props.pet.breeds.length ? (
                 <>
-                  <p>Peso: {props.pet.breeds[0].weight.metric}Kg</p>
-                  <p>Altura: {props.pet.breeds[0].height.metric}cm</p>
-                  <p>Tempo de vida: {props.pet.breeds[0].life_span}</p>
-                  <p>Criado para: {props.pet.breeds[0].bred_for}</p>
-                  <p>Grupo Racial: {props.pet.breeds[0].breed_group}</p>
-                  <p>Temperamento: {props.pet.breeds[0].temperament}</p>
+                  <PetItem><PetProp>Peso:</PetProp> {props.pet.breeds[0].weight.metric}Kg</PetItem>
+                  <PetItem><PetProp>Altura:</PetProp> {props.pet.breeds[0].height.metric}cm</PetItem>
+                  <PetItem><PetProp>Tempo de vida:</PetProp> {props.pet.breeds[0].life_span}</PetItem>
+                  <PetItem><PetProp>Criado para:</PetProp> {props.pet.breeds[0].bred_for}</PetItem>
+                  <PetItem><PetProp>Grupo Racial:</PetProp> {props.pet.breeds[0].breed_group}</PetItem>
+                  <PetItem><PetProp>Temperamento:</PetProp> {props.pet.breeds[0].temperament}</PetItem>
                 </>
               ) : (
                 <p>Não temos informação desse Cachorro :(</p>
@@ -95,7 +94,7 @@ function Card(props) {
           </DialogTitle>
           <DialogContent>
             <DialogPet src={props.pet.url} alt="Pet selecionado" />
-            
+            <DialogContentText>
               {props.pet.breeds.length ? (
                 <>
                   <PetItem><PetProp>Peso:</PetProp> {props.pet.breeds[0].weight.metric}Kg</PetItem>
@@ -108,7 +107,7 @@ function Card(props) {
               ) : (
                 <p>Não temos informação desse Cachorro :(</p>
               )}
-         
+            </DialogContentText>
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose} color="primary">
