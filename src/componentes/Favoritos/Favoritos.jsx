@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { MenuLike } from '../styles/CardStyle';
-import CabecalhoFavoritos from './CabecalhoFavoritos';
-import Card from './Card';
+import { MenuLike } from './style.js';
+import CabecalhoFavoritos from '../CabecalhoFavoritos/CabecalhoFavoritos.jsx';
+import Card from '../Card/Card.jsx';
 
 function Favoritos(props){
     const [ListaLike, setLike] = useState([]);
     const [ListaDislike, setDislike] = useState([]);
+    
     useEffect(() =>{
         if(props.connection._connection != null){
             if(ListaLike.length === 0){
@@ -17,6 +18,7 @@ function Favoritos(props){
                     .then(Lista => setDislike([...Lista]));
             }}
     })
+
     return (
         <>
             <CabecalhoFavoritos like={true}/>

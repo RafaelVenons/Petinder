@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import GlobalStyle from './styles/GlobalStyled.js';
-import Cabecalho from './componentes/Cabecalho';
-import Search from './componentes/Search.jsx';
+import Cabecalho from './componentes/Cabecalho/Cabecalho.jsx';
+import Search from './componentes/Search/Search.jsx';
 import PetDao from './IDB/PetDao.js';
-import Home from './componentes/Home.jsx';
-import Favoritos from './componentes/Favoritos.jsx';
+import Home from './componentes/Home/Home.jsx';
+import Favoritos from './componentes/Favoritos/Favoritos.jsx';
 import User from './componentes/User/User.jsx';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
       const nomeLocalStorage = localStorage.getItem('Nome')||'User';
       setNome(nomeLocalStorage);
     }
-    if(desc === ''){
+  if(desc === ''){
       const descLocalStorage = localStorage.getItem('Desc')||'';
       setDesc(descLocalStorage);
     }

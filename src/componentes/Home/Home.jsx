@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MenuLike } from '../styles/CardStyle';
-import { Opcao } from '../styles/HomeStyle';
+import { MenuLike, Opcao } from './style.js';
 
 function Home(){
     return (

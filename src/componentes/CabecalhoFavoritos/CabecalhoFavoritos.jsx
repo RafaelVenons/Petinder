@@ -1,7 +1,7 @@
 import React from 'react';
-import Like from '../assets/okay.png'
-import DisLike from '../assets/not_ok.png'
-import { Barra, IconeBarra } from '../styles/CardStyle';
+import Like from '../../assets/okay.png'
+import DisLike from '../../assets/not_ok.png'
+import { Barra, IconeBarra } from './style.js';
 
 function CabecalhoFavoritos(props){
     if(props.like){

@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { Container, TextField, Button } from "@material-ui/core";
-import {
-  UsuarioApresentacao,
-  UsuarioImg,
-  UserName,
-  Name,
-  Pq,
-} from "./style.js";
+import { UsuarioApresentacao, UsuarioImg, UserName, Name, Pq } from "./style.js";
 
 function User({nome, setNome, desc, setDesc}) {
   const [novoNome, setNovoNome] = useState('');

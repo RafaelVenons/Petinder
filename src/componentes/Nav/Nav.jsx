@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { NavItem, NavMenu } from '../styles/Header';
+import { NavItem, NavMenu } from './style.js';
 
 function Nav(){
     let location = useLocation();
@@ -21,7 +21,7 @@ function Nav(){
             <Link style={{ textDecoration: 'none', color: 'black' }} to="/" ><NavItem select={selectH}>Home</NavItem></Link>
             <Link style={{ textDecoration: 'none', color: 'black' }} to="/user" ><NavItem select={selectU} ocutar={true}>Perfil</NavItem></Link>
             <Link style={{ textDecoration: 'none', color: 'black' }} to="/search"><NavItem select={selectS}>Novos Pets</NavItem></Link>
-            <Link style={{ textDecoration: 'none', color: 'black' }} to="/favoritos"><NavItem select={selectF}>Pets Favoritos</NavItem></Link>
+            <Link style={{ textDecoration: 'none', color: 'black' }} to="/favoritos"><NavItem select={selectF}>Favoritos</NavItem></Link>
         </NavMenu>
     )
 }
