@@ -1,17 +1,14 @@
 import styled from 'styled-components';
-import ProfileDefault from '../../assets/ProfileDefault.png';
 
 export const UsuarioImg = styled.img`
     width: 250px;
     height: 250px;
     position: relative;
     margin: 1rem;
-    background-image: url(${props => props.imagem ? props.imagem : ProfileDefault});
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    object-fit: cover;
     border-radius: 100%;
 `
+
 export const UsuarioApresentacao = styled.div`
     display: flex;
     align-items: center;

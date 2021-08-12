@@ -10,15 +10,24 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@material-ui/core";
+import { useContext } from "react";
+import InformacoesUsuario from "../../contexts/InformacoesUsuario.jsx";
 
 function Card(props) {
   const [open, setOpen] = React.useState(false);
+
+  const infoUser = useContext(InformacoesUsuario);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
+    setOpen(false);
+  };
+  
+  const handleChangeImg = () => {
+    infoUser.setURLUser(props.pet.url);
     setOpen(false);
   };
 
@@ -64,7 +73,7 @@ function Card(props) {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose} color="primary">
+            <Button onClick={handleChangeImg} color="primary">
               Adicionar ao perfil
             </Button>
             <Button onClick={handleClose} color="primary">
@@ -110,7 +119,7 @@ function Card(props) {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose} color="primary">
+            <Button onClick={handleChangeImg} color="primary">
               Adicionar ao perfil
             </Button>
             <Button onClick={handleClose} color="primary" autoFocus>

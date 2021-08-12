@@ -5,10 +5,10 @@ import Profile from '../Profile/Profile.jsx';
 import { Header, Logo } from './style.js';
 import Nav from '../Nav/Nav.jsx';
 
-function Cabecalho({nome}){
+function Cabecalho(){
     return(
         <Header>
-            <Link style={{ textDecoration: 'none', color: 'black' }} to='/user'><Profile nome={nome}/></Link>
+            <Link style={{ textDecoration: 'none', color: 'black' }} to='/user'><Profile/></Link>
             <Link to='/'><Logo src={LogoIMG} alt="Logo"/></Link>
             <Nav/>
         </Header>

@@ -11,7 +11,9 @@ export const ProfileDiv = styled.section`
 `
 export const ProfileImg = styled.img`
     height: 90px;
+    width: 90px;
     border-radius: 50px;
+    object-fit: cover;
 `
 export const ProfileMenu = styled.div`
     height: 90px;

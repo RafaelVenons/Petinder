@@ -1,21 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Container, TextField, Button } from "@material-ui/core";
 import { UsuarioApresentacao, UsuarioImg, UserName, Name, Pq } from "./style.js";
+import InformacoesUsuario from "../../contexts/InformacoesUsuario.jsx"
 
-function User({nome, setNome, desc, setDesc}) {
+function User() {
   const [novoNome, setNovoNome] = useState('');
   const [novaDesc, setNovaDesc] = useState('');
+  
+  const infoUser = useContext(InformacoesUsuario);
 
   function handledForm(event) {
     event.preventDefault();
     if (novoNome !== ''){
       localStorage.setItem('Nome', novoNome);
-      setNome(novoNome);
+      infoUser.setNome(novoNome);
       setNovoNome('');
     }
     if (novaDesc !== ''){
       localStorage.setItem('Desc', novaDesc);
-      setDesc(novaDesc);
+      infoUser.setDesc(novaDesc);
       setNovaDesc('');
     }
   }
@@ -23,10 +26,10 @@ function User({nome, setNome, desc, setDesc}) {
   return (
     <Container maxWidth="sm">
       <UsuarioApresentacao>
-        <UsuarioImg />
+        <UsuarioImg src={infoUser.URLUser}/>
         <UserName>
-          <Name>{nome}</Name>
-          <Pq>{desc}</Pq>
+          <Name>{infoUser.nome}</Name>
+          <Pq>{infoUser.desc}</Pq>
         </UserName>
       </UsuarioApresentacao>
       <form onSubmit={handledForm}>

@@ -21,7 +21,7 @@ export const NavItem = styled.div`
     font-size: 20px;
     text-decoration: none;
 
-    @media (max-width: 900px){
+    @media (max-width: 800px){
         display: inline;
     }
 `

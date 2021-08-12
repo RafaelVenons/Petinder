@@ -1,13 +1,15 @@
 import React from 'react';
-import ProfileDefault from "../../assets/ProfileDefault.png"
+import { useContext } from 'react';
+import InformacoesUsuario from '../../contexts/InformacoesUsuario';
 import { ProfileDiv, ProfileImg, ProfileMenu, ProfileName, ProfileConfig } from './style.js';
 
-function Profile({nome}){
+function Profile(){
+    const infoUser = useContext(InformacoesUsuario);
     return (
         <ProfileDiv>
-            <ProfileImg src={ProfileDefault} />
+            <ProfileImg src={infoUser.URLUser} />
             <ProfileMenu>
-                <ProfileName>{nome}</ProfileName>
+                <ProfileName>{infoUser.nome}</ProfileName>
                 <ProfileConfig>Configurações</ProfileConfig>
             </ProfileMenu>
         </ProfileDiv>
