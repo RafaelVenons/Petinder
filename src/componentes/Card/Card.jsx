@@ -27,6 +27,7 @@ function Card(props) {
   };
   
   const handleChangeImg = () => {
+    localStorage.setItem("UserImg", props.pet.url)
     infoUser.setURLUser(props.pet.url);
     setOpen(false);
   };
